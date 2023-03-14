@@ -2,7 +2,7 @@ const { Pool } = require('pg')
 
 const config = {
     dev: {
-        database: 'elearning-app',
+        database: 'elearning_app',
     },
     prod: {
         connectionString: process.env.DATABASE_URL,

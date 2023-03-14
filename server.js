@@ -51,7 +51,8 @@ app.use((req, res, next) => {
 
 app.use(viewHelpers)
 
-app.use("/", require('./controllers/session_controller'))
+
+// app.use("/", require('./controllers/session_controller'))
 
 app.use("/", require('./controllers/course_controller'))
 
