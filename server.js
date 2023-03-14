@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const port = process.env.PORT || 3000
+const expressLayouts = require("express-ejs-layouts")
 const logger= require('./middlewares/logger')
 const methodOverride = require('./middlewares/method_override')
 const session = require('express-session')
@@ -19,6 +20,8 @@ app.use(express.urlencoded({ extended: true }))
 
 app.use(methodOverride)
 
+app.use(expressLayouts)
+
 app.use(session({
     secret: process.env.SESSION_SECRET || "mistyrose",
     store: new MemoryStore({
@@ -34,7 +37,7 @@ app.use((req, res, next) => {
     const { userId } = req.session
 
     if(userId){
-        const sql = `select id, email from users where id = ${userId}`
+        const sql = `select user_id, name, email from users where user_id = ${userId}`
 
         pool.query(sql, (err, dbRes) => {
             if(err){
@@ -55,6 +58,8 @@ app.use(viewHelpers)
 // app.use("/", require('./controllers/session_controller'))
 
 app.use("/", require('./controllers/course_controller'))
+app.use("/", require('./controllers/session_controller'))
+app.use("/users", require("./controllers/user_controller"))
 
 app.listen(port, () => {
     console.log(`Listening on ${port}`)

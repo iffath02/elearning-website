@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
     })
 })
 
-router.get('/courses/:course_id', (req, res) => {
+router.get('/courses/:course_id', ensureLoggedIn, (req, res) => {
     let course_id = req.params.course_id
     const sql = 'select * from course where course_id=$1;'
     pool.query(sql, [course_id], (err, dbRes) => {
