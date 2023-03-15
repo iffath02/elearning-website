@@ -34,7 +34,6 @@
             <p>logged in as: <%= currentUser.name %></p>
             <% if(isAdmin()){ %>
                 <a href="/courses/new">Create a course</a>
-                <a href="/courses/edit">Edit course</a>
             <% } %>  
             <% if(!isAdmin()){ %>
                 <a href="/users/courses/<%= currentUser.user_id %>">My Courses</a>
