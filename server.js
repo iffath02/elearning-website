@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 8000
 const expressLayouts = require("express-ejs-layouts")
 const logger= require('./middlewares/logger')
 const methodOverride = require('./middlewares/method_override')

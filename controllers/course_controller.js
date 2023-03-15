@@ -23,6 +23,10 @@ router.get('/courses/category/:course_category', (req, res) => {
     })
 })
 
+router.get('/courses/new', (req,res) => {
+    res.render("new_course")
+})
+
 router.get('/courses/:course_id', (req, res) => {
     let course_id = req.params.course_id
     const sql = 'select * from course where course_id=$1;'
@@ -32,6 +36,32 @@ router.get('/courses/:course_id', (req, res) => {
     })
 })
 
-router.get('/')
+router.post('/courses', (req,res) => {
+    const course_id = req.body.course_id
+    const category = req.body.category
+    const course_name = req.body.course_name
+    const sql = 'insert into courses (course_id, category, course_name) values ($1, $2, $3)'
+
+    pool.query(sql, [course_id, category, course_name], (err, dbRes) => {
+        res.render("new_course_details", {course_id: course_id})
+    })
+})
+
+router.post('/courses/new/course/:course_id', (req, res) => {
+    const category = req.body.category
+    const course_id = req.body.course_id
+    const course_name = req.body.course_name
+    const image_url = req.body.image_url
+    const blurb = req.body.blurb
+    const curriculum = req.body.curriculum
+    const skills_covered = req.body.skills_covered
+    const sql = 'insert into course (category, course_id, course_name, image_url, blurb, curriculum, skills_covered) values ($1, $2, $3, $4, $5, $6, $7)'
+
+    pool.query(sql, [category, course_id, course_name, image_url, blurb, curriculum, skills_covered], (err, dbRes) => {
+        res.redirect('/')
+    })
+})
+
+
 
 module.exports = router

@@ -4,3 +4,9 @@
     <p><%= course.blurb %></p>
     <p><%= course.curriculum %></p>
     <p><%= course.skills_covered %></p>
+    <% if(isLoggedIn()){ %>
+        <form action="/users/<%= record.course_id %>" method="post">
+            <input type="hidden" name="user_id" value="<%= currentUser.user_id %>">
+            <button>Add Course</button>
+        </form>
+    <% } %> 

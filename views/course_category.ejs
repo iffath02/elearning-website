@@ -2,4 +2,10 @@
 <% category_records.forEach(record => { %>
     <h2><a href="/courses/<%= record.course_id %>"><%= record.course_name %></a></h2>
     <img src="<%= record.image_url %>" alt=""/>
+    <% if(isLoggedIn()){ %>
+        <form action="/users/<%= record.course_id %>" method="post">
+            <input type="hidden" name="user_id" value="<%= currentUser.user_id %>">
+            <button>Add Course</button>
+        </form>
+    <% } %> 
  <% }); %>

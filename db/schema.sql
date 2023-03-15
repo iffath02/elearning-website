@@ -12,7 +12,7 @@ CREATE TABLE users(
     name TEXT,
     email TEXT,
     password TEXT,
-    isAdmin TEXT
+    isAdmin  BOOLEAN
 );
 
 CREATE TABLE course(

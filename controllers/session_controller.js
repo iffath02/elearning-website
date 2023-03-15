@@ -12,6 +12,7 @@ router.post('/sessions', (req,res) => {
 
     const email = req.body.email
     const password = req.body.password
+    console.log(email, password)
 
     const sql = `Select * from users where email=$1;`
     pool.query(sql, [email], (err, dbRes) => {
@@ -22,6 +23,7 @@ router.post('/sessions', (req,res) => {
         const user = dbRes.rows[0]
 
         bcrypt.compare(password, user.password, (err, result) => {
+            console.log(result)
             if(result){
                 console.log(req.session)
                 req.session.userId = user.user_id 
@@ -31,6 +33,7 @@ router.post('/sessions', (req,res) => {
 
                 res.redirect('/')
             } else{
+                console.log(err)
                 res.render('login')
             }
         })
