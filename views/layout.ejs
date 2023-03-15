@@ -31,13 +31,13 @@
                 <input type="hidden" name="_method" value="delete">
                 <button>Logout</button>
             </form>
-            <p>logged in as: <%= currentUser.name %></p> 
+            <p>logged in as: <%= currentUser.name %></p>
             <% if(isAdmin()){ %>
-                <a href="/users/course">My Courses</a>
-            <% } %>
-            <% if(!isAdmin()){ %>
                 <a href="/courses/edit">Edit course</a>
-            <% } %>    
+            <% } %>  
+            <% if(!isAdmin()){ %>
+                <a href="/users/course">My Courses</a>
+            <% } %>   
         <% } %>    
 
     </header>

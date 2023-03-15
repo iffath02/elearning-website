@@ -1,6 +1,6 @@
-function userView(req, res, next){
+function adminView(req, res, next){
     res.locals.isAdmin = () => {
-        if (!req.session.isAdmin){
+        if (req.session.isAdmin === 'true'){
             return true
         } else{
             return false
@@ -9,4 +9,4 @@ function userView(req, res, next){
     next()
 }
 
-module.exports = userView
+module.exports = adminView

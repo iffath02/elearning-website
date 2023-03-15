@@ -9,7 +9,7 @@ const pool = require('./db')
 const viewHelpers = require('./middlewares/view_helpers')
 const MemoryStore = require('memorystore')(session)
 const setCurrentUser = require("./middlewares/set_current_user")
-const isAdmin = require("./middlewares/user_view.js")
+const isAdmin = require("./middlewares/admin_view.js")
 
 
 app.set("view engine", "ejs")
