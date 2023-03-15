@@ -1,0 +1,5 @@
+<h2>Course category</h2>
+<% category_records.forEach(record => { %>
+    <h2><a href="/courses/<%= record.course_id %>"><%= record.course_name %></a></h2>
+    <img src="<%= record.image_url %>" alt=""/>
+ <% }); %>

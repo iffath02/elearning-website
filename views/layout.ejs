@@ -9,22 +9,37 @@
   </head>
   <body>
     <header>
+
+        <nav>
+            <a href="/">home</a>
+            <a href="/login">login</a>
+            <a href="/users/signup">signup</a>
+          </nav>
+
+        <nav>
+            <h2>Browse by categories</h2>
+           
+            <a href="/courses/category/front-end">Front-end Development</a>
+            <a href="/courses/category">Big Data</a>
+            <a href="/courses/category">Cloud</a>
+            <a href="/courses/category/cybersecurity">Cybersecurity</a>
+          </nav>
+
+
         <% if(isLoggedIn()){ %>
             <form action="/sessions" method="post">
                 <input type="hidden" name="_method" value="delete">
                 <button>Logout</button>
             </form>
+            <p>logged in as: <%= currentUser.name %></p> 
+            <% if(isAdmin()){ %>
+                <a href="/users/course">My Courses</a>
             <% } %>
+            <% if(!isAdmin()){ %>
+                <a href="/courses/edit">Edit course</a>
+            <% } %>    
+        <% } %>    
 
-      <nav>
-        <a href="/">home</a>
-        <a href="/login">login</a>
-        <a href="/users/signup">signup</a>
-      </nav>
-
-      <% if(isLoggedIn ()){ %>
-        <p>logged in as: <%= currentUser.name %></p> 
-        <% } %>
     </header>
 
     <%- body %>

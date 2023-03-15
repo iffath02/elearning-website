@@ -11,7 +11,8 @@ CREATE TABLE users(
     user_id SERIAL PRIMARY KEY,
     name TEXT,
     email TEXT,
-    password TEXT
+    password TEXT,
+    isAdmin TEXT
 );
 
 CREATE TABLE course(

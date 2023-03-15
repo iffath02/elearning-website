@@ -8,6 +8,8 @@ const session = require('express-session')
 const pool = require('./db')
 const viewHelpers = require('./middlewares/view_helpers')
 const MemoryStore = require('memorystore')(session)
+const setCurrentUser = require("./middlewares/set_current_user")
+const isAdmin = require("./middlewares/user_view.js")
 
 
 app.set("view engine", "ejs")
@@ -32,30 +34,9 @@ app.use(session({
 })
 )
 
-app.use((req, res, next) => {
-
-    const { userId } = req.session
-
-    if(userId){
-        const sql = `select user_id, name, email from users where user_id = ${userId}`
-
-        pool.query(sql, (err, dbRes) => {
-            if(err){
-                console.log(err)
-            } else{
-                res.locals.currentUser = dbRes.rows[0]
-                next()
-            }
-        })
-    }else{
-        next()
-    }
-})
-
+app.use(setCurrentUser)
 app.use(viewHelpers)
-
-
-// app.use("/", require('./controllers/session_controller'))
+app.use(isAdmin)
 
 app.use("/", require('./controllers/course_controller'))
 app.use("/", require('./controllers/session_controller'))

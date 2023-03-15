@@ -26,6 +26,7 @@ router.post('/sessions', (req,res) => {
                 console.log(req.session)
                 req.session.userId = user.user_id 
                 req.session.email = user.email
+                req.session.isAdmin = user.isadmin
 
                 res.redirect('/')
             } else{
