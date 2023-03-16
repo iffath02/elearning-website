@@ -1,15 +1,16 @@
-<h1>sign up</h1>
-<form class="signup" action="/users" method="post">
-    <label for="name">Name</label>
-    <input type="text" name="name" />
-    <label for="email">email</label>
-    <input type="text" name="email" />
-    <label for="">password</label>
-    <input type="password" name="password" />
-    <label for="">password confirmation</label>
-    <input type="password" name="password_confirmation" />
-    <input type="hidden" name="isAdmin" value="FALSE" />
-    <p>
-        <button>signup</button>
-    </p>
-</form>
+<div class="signup-wrapper">
+    <h1>Sign up</h1>
+    <hr>
+    <form class="signup" action="/users" method="post">
+        <label for="name">Name</label>
+        <input type="text" placeholder="Enter your name" name="name" required/>
+        <label for="email">Email</label>
+        <input type="text" placeholder="Enter your email" name="email" required/>
+        <label for="">Password</label>
+        <input type="password"  placeholder="Enter your password" name="password" required/>
+        <label for="">Password Confirmation</label>
+        <input type="password" placeholder="Re-enter your password" name="password_confirmation" />
+        <input type="hidden" name="isAdmin" value="FALSE" />
+        <button class="btn-signup">Signup</button>
+    </form>
+</div>    

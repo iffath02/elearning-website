@@ -3,7 +3,10 @@
 }
 
 body{
-    background-color: snow;
+    /* background-color: #FFFFFC; */
+    /* background-color: #F3F9D2; */
+    background-color: whitesmoke;
+    font-family: Verdana, Geneva, sans-serif;
 }
 
 header{
@@ -11,8 +14,14 @@ header{
     justify-content: space-between;
     margin: 0;
     padding: 10px;
-    background-color: #002395;
+    /* background-color: #002395; */
+    /* background-color: #CBE896; */
+    background-color: #002147;
+    /* background: -webkit-linear-gradient(90deg, hsla(81, 64%, 75%, 1) 0%, hsla(0, 0%, 89%, 1) 100%); */
+    /* background: -webkit-radial-gradient(circle, hsla(163, 36%, 54%, 1) 0%, hsla(0, 0%, 89%, 1) 100%);
+    background: -webkit-radial-gradient(circle, hsla(81, 64%, 75%, 1) 0%, hsla(0, 0%, 89%, 1) 100%); */
     color: white;
+    
 }
 
 header h1{
@@ -42,7 +51,8 @@ header a{
     justify-content: space-between;
     margin: 0;
     padding: 10px;
-    background-color: #bcd4e6;
+    /* background-color: #bcd4e6; */
+    background-color: #BEB7A4;
 }
 
 .categories h2{
@@ -56,7 +66,165 @@ header a{
     font-size: 20px;
 }
 
+.card-wrapper{
+    background-color: white;
+    padding: 10px;
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    height: 100%;
+    grid-auto-rows: auto;
+}
+
+.card{
+    /* display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between; */
+    /* grid-template-rows: auto; */
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    /* overflow: hidden; */
+}
+
+.card a{
+    text-decoration: none;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.card img{
+    flex: 1;
+    width: 100%;
+}
+
+.course-name{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.course-options{
+    display: flex;
+    /* flex: 1; */
+    gap: 20px;
+    justify-content: center;
+    padding: 10px;
+}
+
+.signup-wrapper{
+    padding: 16px;
+    width: 500px;
+    margin: 0 auto;
+}
+
+.signup-wrapper h1{
+    text-align: center;
+}
+
+.signup-wrapper input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: 1px solid lightgrey;
+    background: #f1f1f1;
+}
+  
+.signup-wrapper input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+  
+.signup-wrapper hr {
+    border: 1px solid lightgrey;
+    margin-bottom: 25px;
+}
+
+.signup-wrapper button {
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+  
+.signup-wrapper button:hover {
+    opacity:1;
+}
+
+.btn-signup{
+    background-color: #04AA6D;
+    padding: 20px;
+}
+  
+/* .btn-cancel, .btn-signup {
+    float: left;
+    width: 50%;
+} */
+
+.login-wrapper{
+    padding: 16px;
+    width: 500px;
+    margin: 0 auto;
+}
+
+.login-wrapper h1{
+    text-align: center;
+}
+
+.login-wrapper input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: 1px solid lightgrey;
+    background: #f1f1f1;
+}
+  
+.login-wrapper input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+  
+.login-wrapper hr {
+    border: 1px solid lightgrey;
+    margin-bottom: 25px;
+}
+
+.login-wrapper button {
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+  
+.login-wrapper button:hover {
+    opacity:1;
+}
+
+.btn-login{
+    background-color: #04AA6D;
+    padding: 20px;
+}
 
 img{
     width: 200px;
 }
+
+@media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+       width: 100%;
+    }
+  }

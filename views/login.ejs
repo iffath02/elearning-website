@@ -1,10 +1,13 @@
-<form action = "/sessions" method="post">
-    <label for="">email</label>
-    <input type="text" name="email">
+<div class="login-wrapper">
+    <h1>Login</h1>
+    <hr>
+    <form action = "/sessions" method="post">
+        <label for="">email</label>
+        <input type="text" placeholder="Enter your email" name="email" required/>
 
-    <label for="">Password</label>
-    <input type="password" name="password">
+        <label for="">Password</label>
+        <input type="password" placeholder="Enter your password" name="password" required/>
 
-    <button>Login</button>
-
-</form>
+        <button class="btn-login">Login</button>
+    </form>
+</div>
