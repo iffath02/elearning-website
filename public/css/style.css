@@ -1,3 +1,60 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: snow;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 10px;
+    background-color: #002395;
+    color: white;
+}
+
+header h1{
+    margin: 0;
+}
+
+#app-name{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#options{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+}
+
+header a{
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.categories{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 10px;
+    background-color: #bcd4e6;
+    color: white;
+}
+
+.categories h2{
+    margin: 0;
+}
+
+.categories a{
+    font-size: 20px;
+}
+
+
 img{
     width: 200px;
 }

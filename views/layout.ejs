@@ -9,22 +9,27 @@
   </head>
   <body>
     <header>
-
-        <nav>
-            <a href="/">home</a>
-            <a href="/login">login</a>
-            <a href="/users/signup">signup</a>
-          </nav>
-
-        <nav>
+        <nav id="app-name">
+          <img src="https://cdn.pixabay.com/photo/2016/03/19/04/40/cap-1266204__340.png" alt="">
+          <h1>Learning Loop</h1>
+        </nav>
+        <nav id="options">  
+          <a href="/">Home</a>
+          <% if(!isLoggedIn()){ %>
+          <button><a href="/login">Login</a></button>
+          <button><a href="/users/signup">Signup</a></button>
+          <% } %>
+        </nav>
+    </header>
+    <section class="categories">
             <h2>Browse by categories</h2>
-           
+            <nav>
             <a href="/courses/category/front-end">Front-end Development</a>
             <a href="/courses/category">Big Data</a>
             <a href="/courses/category">Cloud</a>
             <a href="/courses/category/cybersecurity">Cybersecurity</a>
           </nav>
-
+    </section>
 
         <% if(isLoggedIn()){ %>
             <form action="/sessions" method="post">
@@ -39,8 +44,6 @@
                 <a href="/users/courses/<%= currentUser.user_id %>">My Courses</a>
             <% } %>   
         <% } %>    
-
-    </header>
 
     <%- body %>
   </body>

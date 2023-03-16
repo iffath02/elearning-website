@@ -96,24 +96,24 @@ router.delete('/courses/:course_id', (req, res) => {
     pool.query(sql, (err1, dbRes1) => {
         const sql = `delete from course where course_id = ${course_id}`
         pool.query(sql, (err2, dbRes2) => {
-            pool.query(sql, (err3, dbRes3) => {
-                const sql = `select * from user_courses where course_id = ${course_id})`
-                pool.query(sql, (err4, dbRes4) => {
-                    console.log(err4)
-                    console.log(dbRes4.rows)
-                    if(dbRes4.rows.length == 0){
-                        res.redirect('/')
-                    }
-                    else{
-                        const sql = `delete from user_courses where course_id = ${course_id}`
-                        pool.query(sql, (err2, resDb) => {
-                            res.redirect('/')
-                        })
-                    }
-                })
-            })
+        //         const sql = `select * from user_courses where course_id = ${course_id})`
+        //         pool.query(sql, (err3, dbRes3) => {
+        //             console.log(err3)
+        //             console.log(dbRes3.rows)
+        //             if(dbRes4.rows.length == 0){
+        //                 res.redirect('/')
+        //             }
+        //             else{
+        //                 const sql = `delete from user_courses where course_id = ${course_id}`
+        //                 pool.query(sql, (err2, resDb) => {
+        //                     res.redirect('/')
+        //                 })
+        //             }
+        //         })
+        //     })
+        res.redirect('/')
         })
-})
+    })
 })
 
 
