@@ -1,23 +1,28 @@
-    <h2>Course details</h2>
-    <p><%= course.course_name %></p>
-    <p><img src="<%= course.image_url %>" alt=""></p>
+    <h2 id="details-course_name"><%= course.course_name %></h2>
+    <div class="top-section">
+    <div class="image-wrapper">
+    <img src="<%= course.image_url %>" alt="">
+    </div>
     <p><%= course.blurb %></p>
+</div>
+    <h3>Course Syllabus</h3>
     <p><%= course.curriculum %></p>
+    <h3>Skills Covered</h3>
     <p><%= course.skills_covered %></p>
     <% if(isLoggedIn() && !isAdmin()){ %>
         <form action="/users/<%= course.course_id %>" method="post">
             <input type="hidden" name="user_id" value="<%= currentUser.user_id %>">
-            <button>Add Course</button>
+            <button id="btn-c-options">Add Course</button>
         </form>
     <% } %>
     <% if(isLoggedIn() && isAdmin()){ %>
         <form action="/courses/<%= course.course_id %>/edit">
             <input type="hidden" name="course_id" value="<%= course.course_id %>">
-            <button>Edit Course</button>
+            <button id="btn-c-options">Edit Course</button>
         </form>
         <form action="/courses/<%= course.course_id %>" method="post">
             <input type ="hidden" name="_method" value="delete">
             <input type="hidden" name="course_id" value="<%= course.course_id %>">
-            <button>Delete Course</button>
+            <button id="btn-cd-options">Delete Course</button>
         </form>
-    <% } %>  
+    <% } %> 

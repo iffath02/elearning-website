@@ -1,23 +1,39 @@
-<h2>Course category</h2>
-<% category_records.forEach(record => { %>
-    <h2><a href="/courses/<%= record.course_id %>"><%= record.course_name %></a></h2>
-    <img src="<%= record.image_url %>" alt=""/>
-    <% if(isLoggedIn()){ %>
-        <form action="/users/<%= record.course_id %>" method="post">
-            <input type="hidden" name="user_id" value="<%= currentUser.user_id %>">
-            <button>Add Course</button>
-        </form>
-    <% } %> 
+ <div class="card-wrapper">
+    <h2>Course category - <%= category_records[0].category %></h2>
+    <div class="cards">
+        <% category_records.forEach(record => { %>
+            <div class="card">
+                <a href="/courses/<%= record.course_id %>">
+                    <section>
+                        <h2 class="course-name"><%= record.course_name %></h2>
+                    </section>
 
-    <% if(isLoggedIn() && isAdmin()){ %>
-        <form action="/courses/<%= record.course_id %>/edit">
-            <input type="hidden" name="course_id" value="<%= record.course_id %>">
-            <button>Edit Course</button>
-        </form>
-        <form action="/courses/<%= record.course_id %>" method="post">
-            <input type ="hidden" name="_method" value="delete">
-            <input type="hidden" name="course_id" value="<%= record.course_id %>">
-            <button>Delete Course</button>
-        </form>
-    <% } %> 
- <% }); %>
+                    <section class="course-image">
+                        <img src="<%= record.image_url %>" alt=""/>
+                    </section>
+
+                    <section class="course-options">
+                        <% if(isLoggedIn() && !isAdmin()){ %>
+                            <form action="/users/<%= record.course_id %>" method="post">
+                                <input type="hidden" name="user_id" value="<%= currentUser.user_id %>">
+                                <button id="btn-c-options">Add Course</button>
+                            </form>
+                        <% } %>
+                    
+                        <% if(isLoggedIn() && isAdmin()){ %>
+                            <form action="/courses/<%= record.course_id %>/edit">
+                                <input type="hidden" name="course_id" value="<%= record.course_id %>">    
+                                <button id="btn-c-options">Edit Course</button>
+                            </form>
+                            <form action="/courses/<%= record.course_id %>" method="post">
+                                <input type ="hidden" name="_method" value="delete">
+                                <input type="hidden" name="course_id" value="<%= record.course_id %>">
+                                <button id="btn-cd-options">Delete Course</button>
+                            </form>
+                        <% } %>
+                    </section>
+                </a>
+            </div>      
+        <% }); %>
+    </div>
+</div>  

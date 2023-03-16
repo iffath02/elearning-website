@@ -1,4 +1,15 @@
-<% records.forEach(record => { %>
-    <h2><%= record.course_name %></h2>
-<img src="<%= record.image_url %>" alt=""/>
-<% }); %>
+<div class="card-wrapper">
+    <div class="cards">
+        <% records.forEach(record => { %>
+            <div class="card">
+                    <section>
+                        <h2 class="course-name"><%= record.course_name %></h2>
+                    </section>
+
+                    <section class="course-image">
+                        <img src="<%= record.image_url %>" alt=""/>
+                    </section>
+            </div>      
+        <% }); %>
+    </div>
+</div> 

@@ -15,19 +15,19 @@
                         <% if(isLoggedIn() && !isAdmin()){ %>
                             <form action="/users/<%= record.course_id %>" method="post">
                                 <input type="hidden" name="user_id" value="<%= currentUser.user_id %>">
-                                <button>Add Course</button>
+                                <button id="btn-c-options">Add Course</button>
                             </form>
                         <% } %>
                     
                         <% if(isLoggedIn() && isAdmin()){ %>
                             <form action="/courses/<%= record.course_id %>/edit">
                                 <input type="hidden" name="course_id" value="<%= record.course_id %>">    
-                                <button>Edit Course</button>
+                                <button id="btn-c-options">Edit Course</button>
                             </form>
                             <form action="/courses/<%= record.course_id %>" method="post">
                                 <input type ="hidden" name="_method" value="delete">
                                 <input type="hidden" name="course_id" value="<%= record.course_id %>">
-                                <button>Delete Course</button>
+                                <button id="btn-cd-options">Delete Course</button>
                             </form>
                         <% } %>
                     </section>

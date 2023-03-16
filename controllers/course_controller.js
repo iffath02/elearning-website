@@ -4,7 +4,7 @@ const ensureLoggedIn = require('./../middlewares/ensure_logged_in')
 const pool = require('./../db')
 
 router.get('/', (req, res) => {
-    const sql = 'select * from courses;'
+    const sql = 'select * from courses order by course_id ASC;'
     pool.query(sql, (err, dbRes) => {
         res.locals.records = {}
         res.locals.records = dbRes.rows
@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 router.get('/courses/category/:course_category', (req, res) => {
     let course_category = req.params.course_category
     //console.log(course_category)
-    const sql = `select * from courses where category like '${course_category}%' ;`
+    const sql = `select * from courses where category like '${course_category}%' order by course_id ASC;`
     pool.query(sql, (req, dbRes) => {
         const category_records = dbRes.rows
         //console.log(category_records)
@@ -48,10 +48,11 @@ router.post('/courses', (req,res) => {
     const course_id = req.body.course_id
     const category = req.body.category
     const course_name = req.body.course_name
-    const sql = 'insert into courses (course_id, category, course_name) values ($1, $2, $3)'
+    const image_url = req.body.image_url
+    const sql = 'insert into courses (course_id, category, course_name, image_url) values ($1, $2, $3, $4)'
 
-    pool.query(sql, [course_id, category, course_name], (err, dbRes) => {
-        res.render("new_course_details", {course_id: course_id, category: category, course_name: course_name})
+    pool.query(sql, [course_id, category, course_name, image_url], (err, dbRes) => {
+        res.render("new_course_details", {course_id: course_id, category: category, course_name: course_name, image_url: image_url})
     })
 })
 

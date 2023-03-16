@@ -56,11 +56,6 @@ router.get('/courses/:user_id', (req,res) => {
   
   pool.query(sql, [user_id], (err, dbRes) => {
     const records = dbRes.rows
-    // records.forEach(record => {
-    //   const sql = `Select * from courses where course_id = ${record.course_id};`
-
-    //   pool.query(sql, (err, dbRes) => {
-    //     const record = dbRes.rows[0]
         res.render("user_courses", {records: records})
       })
     });

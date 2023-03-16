@@ -1,9 +1,9 @@
 <div class="form-wrapper">
-    <h1>Edit course details</h1>
+    <h1>Edit Course Details</h1>
     <hr>
         <form action="/courses/:course_id" method="post">
             <input type ="hidden" name="_method" value="put">
-            <label for="">category</label>
+            <label for="">Category</label>
             <input type="text" name="category" value="<%= course.category %>" required/>
             <label for="">Course Id</label>
             <input type="text" name="course_id" value="<%= course.course_id %>" readonly required/>
@@ -14,9 +14,9 @@
             <label for="">Blurb</label>
             <input type="text" name="blurb" placeholder="Enter blurb" value="<%= course.blurb %>"/>
             <label for="">Curriculum</label>
-            <textarea name="curriculum" placeholder="Enter Curriculum" rows="5" cols="50" value="<%= course.curriculum %>"></textarea>
+            <textarea name="curriculum" placeholder="Enter Curriculum" rows="4" cols="50"></textarea>
             <label for="">Skills Covered</label>
-            <input type="text" placeholder="Enter skills covered" name="skills_covered" value="<%= course.skills_covered %>"/>
+            <textarea placeholder="Enter skills covered" name="skills_covered"></textarea>
             <button class="btn-edit">Edit Details</button>
         </form>
 </div>    
