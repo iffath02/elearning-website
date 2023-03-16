@@ -118,17 +118,17 @@ header a{
     padding: 10px;
 }
 
-.signup-wrapper{
+.form-wrapper{
     padding: 16px;
     width: 500px;
     margin: 0 auto;
 }
 
-.signup-wrapper h1{
+.form-wrapper h1{
     text-align: center;
 }
 
-.signup-wrapper input[type=text], input[type=password] {
+.form-wrapper input[type=text], input[type=password] {
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
@@ -137,17 +137,17 @@ header a{
     background: #f1f1f1;
 }
   
-.signup-wrapper input[type=text]:focus, input[type=password]:focus {
+.form-wrapper input[type=text]:focus, input[type=password]:focus {
     background-color: #ddd;
     outline: none;
 }
   
-.signup-wrapper hr {
+.form-wrapper hr {
     border: 1px solid lightgrey;
     margin-bottom: 25px;
 }
 
-.signup-wrapper button {
+.form-wrapper button {
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -157,7 +157,7 @@ header a{
     opacity: 0.9;
 }
   
-.signup-wrapper button:hover {
+.form-wrapper button:hover {
     opacity:1;
 }
 
@@ -171,50 +171,12 @@ header a{
     width: 50%;
 } */
 
-.login-wrapper{
-    padding: 16px;
-    width: 500px;
-    margin: 0 auto;
-}
-
-.login-wrapper h1{
-    text-align: center;
-}
-
-.login-wrapper input[type=text], input[type=password] {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    display: inline-block;
-    border: 1px solid lightgrey;
-    background: #f1f1f1;
-}
-  
-.login-wrapper input[type=text]:focus, input[type=password]:focus {
-    background-color: #ddd;
-    outline: none;
-}
-  
-.login-wrapper hr {
-    border: 1px solid lightgrey;
-    margin-bottom: 25px;
-}
-
-.login-wrapper button {
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    opacity: 0.9;
-}
-  
-.login-wrapper button:hover {
-    opacity:1;
-}
-
 .btn-login{
+    background-color: #04AA6D;
+    padding: 20px;
+}
+
+.btn-edit{
     background-color: #04AA6D;
     padding: 20px;
 }
