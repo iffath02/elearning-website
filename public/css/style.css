@@ -28,7 +28,7 @@ header h1{
 #options{
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
     font-size: 20px;
 }
 
@@ -43,14 +43,16 @@ header a{
     margin: 0;
     padding: 10px;
     background-color: #bcd4e6;
-    color: white;
 }
 
 .categories h2{
     margin: 0;
 }
 
-.categories a{
+.categories nav{
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
     font-size: 20px;
 }
 

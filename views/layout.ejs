@@ -13,38 +13,38 @@
           <img src="https://cdn.pixabay.com/photo/2016/03/19/04/40/cap-1266204__340.png" alt="">
           <h1>Learning Loop</h1>
         </nav>
-        <nav id="options">  
-          <a href="/">Home</a>
+        <nav id="options">
+          <% if(isLoggedIn()){ %>
+            <p>Welcome <%= currentUser.name %></p>
+            <% } %>  
+          <button><a href="/">Home</a></button>
           <% if(!isLoggedIn()){ %>
           <button><a href="/login">Login</a></button>
           <button><a href="/users/signup">Signup</a></button>
           <% } %>
+          <% if(isLoggedIn()){ %>
+            <% if(isAdmin()){ %>
+                <button><a href="/courses/new">Create a course</a></button>
+            <% } %>  
+            <% if(!isAdmin()){ %>
+            <button><a href="/users/courses/<%= currentUser.user_id %>">My Courses</a></button>
+            <% } %>
+            <form action="/sessions" method="post">
+              <input type="hidden" name="_method" value="delete">
+              <button>Logout</button>
+          </form>   
+        <% } %> 
         </nav>
     </header>
     <section class="categories">
             <h2>Browse by categories</h2>
             <nav>
             <a href="/courses/category/front-end">Front-end Development</a>
-            <a href="/courses/category">Big Data</a>
+            <a href="/courses/category/big">Big Data</a>
             <a href="/courses/category">Cloud</a>
             <a href="/courses/category/cybersecurity">Cybersecurity</a>
           </nav>
-    </section>
-
-        <% if(isLoggedIn()){ %>
-            <form action="/sessions" method="post">
-                <input type="hidden" name="_method" value="delete">
-                <button>Logout</button>
-            </form>
-            <p>logged in as: <%= currentUser.name %></p>
-            <% if(isAdmin()){ %>
-                <a href="/courses/new">Create a course</a>
-            <% } %>  
-            <% if(!isAdmin()){ %>
-                <a href="/users/courses/<%= currentUser.user_id %>">My Courses</a>
-            <% } %>   
-        <% } %>    
-
+    </section>    
     <%- body %>
   </body>
 </html>
