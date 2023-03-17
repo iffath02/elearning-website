@@ -6,9 +6,8 @@
 
 body{
     /* background-color: #FFFFFC; */
-    background-color: #F3E4F1;
     margin: 0;
-    /* background-color: whitesmoke; */
+    background-color: whitesmoke;
 
     font-family: Open Sans;
     /* font-family: Verdana, Geneva, sans-serif; */
@@ -315,13 +314,18 @@ header h3{
 
 .top-section p{
     line-height: 1.8;
+    padding: 10px;
+    margin-right: 10px;
 }
 
 .image-wrapper{
     display: flex;
     justify-content: center;
 }
-
+.details-list{
+    margin-left: 10px;
+    margin-right: 10px;
+}
 
 img{
     width: 200px;

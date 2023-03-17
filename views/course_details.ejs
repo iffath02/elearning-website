@@ -1,14 +1,16 @@
-    <h2 id="details-course_name"><%= course.course_name %></h2>
-    <div class="top-section">
+<h2 id="details-course_name"><%= course.course_name %></h2>
+<div class="top-section">
     <div class="image-wrapper">
-    <img src="<%= course.image_url %>" alt="">
+        <img src="<%= course.image_url %>" alt="">
     </div>
     <p><%= course.blurb %></p>
 </div>
+<div class="details-list">
     <h3>Course Syllabus</h3>
     <p><%= course.curriculum %></p>
     <h3>Skills Covered</h3>
     <p><%= course.skills_covered %></p>
+</div>
     <% if(isLoggedIn() && !isAdmin()){ %>
         <form action="/users/<%= course.course_id %>" method="post">
             <input type="hidden" name="user_id" value="<%= currentUser.user_id %>">

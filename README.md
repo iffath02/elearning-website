@@ -1,17 +1,43 @@
-Project #2: Building Your First Full-stack Application
+#Learning Loop
 
-Link to the Application: 
+Building a database backend web application uaing express.js
 
-Overview
-- A database backend web application
-- Building a CRUD app
+Link to the Application: https://learning-loop.onrender.com/
 
 Idea - E-learning Web Application 
-- Course Landing Page that has list of courses 
+The idea is to build a website that offers technical courses to users.
+There will be two kinds of users:
+- Learners (public)
+- Admins
+
+Functionalities Added:
+
+Generic:
+- Public can view the course landing page that has a list of all courses
 - Each course will have a category
-- Course decription page with details of the course 
-- Log in and sign up feature
-- If the user wants to do a course then he will have to purchase this course and the course will be added to his my courses tab
+- They can login if account already exists
+- They can SignUp if account does not exist
+
+After Login
+Users can:
+- Add the course to the 'My Courses' page that is specific to the user
+- View all courses
+
+Admin can:
+- Create a new course
+- Edit a course
+- Delete a course
+- View all course
+
+Application Details:
+- Course Landing Page (CLP)
+- Course Details Page
+- Filter by Category Page
+- Login page
+- Sign up page
+- My Courses Page
+- Create New Course Page
+- Edit Course Page
 
 Technologies
 - HTML
